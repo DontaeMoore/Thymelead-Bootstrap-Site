@@ -28,9 +28,8 @@ public class PersonController {
         Cat c = new Cat();
         speakClearly(c);
 
-        List<Race> list = raceDAO.getRace();
         model.addAttribute("dude", "This is coming from the controller");
-        model.addAttribute("race", list);
+
         return "people";
     }
     @GetMapping("/Bootstrap")
@@ -44,6 +43,12 @@ public class PersonController {
     String getForm(Model model) {
 
         return "form";
+    }
+
+    @GetMapping("/hank")
+    String getHank(Model model) {
+
+        return "HankGreen";
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
